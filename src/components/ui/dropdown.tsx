@@ -41,6 +41,11 @@ const dropdownRecipe = sva({
       display: "flex",
       flexDirection: "column",
       gap: "4",
+      "& button": {
+        _active: {
+          boxShadow: "0 0 0 1px {background}, 0 0 0 2px white",
+        },
+      },
     },
     itemHeader: {
       color: "neutral.300",
