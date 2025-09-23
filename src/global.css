@@ -5,12 +5,6 @@
 @layer reset, base, tokens, recipes, utilities;
 
 /**
- * PandaCSS CSS layers
- * View the full documentation at https://panda-css.com/docs/concepts/cascade-layers#layer-css
- */
-@layer reset, base, tokens, recipes, utilities;
-
-/**
  * WHAT IS THIS FILE?
  *
  * Globally applied styles. No matter which components are in the page or matching route,

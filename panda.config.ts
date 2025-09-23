@@ -76,6 +76,9 @@ export default defineConfig({
             value: "white",
           },
         },
+        radii: {
+          input: { value: "{radii.12}" },
+        },
       },
       textStyles: {
         heading: {
@@ -158,6 +161,15 @@ export default defineConfig({
         20: { value: "20px" },
         24: { value: "24px" },
         full: { value: "9999px" },
+      },
+      assets: {
+        today: {
+          value: "url('/assets/images/bg-today-small.svg')",
+        },
+        todayLg: {
+          type: "url",
+          value: "url('/assets/images/bg-today-large.svg')",
+        },
       },
     },
   },
