@@ -9,6 +9,7 @@ const buttonRecipe = cva({
     cursor: "pointer",
     textStyle: "heading.5",
     transition: "background-color 0.2s ease-in-out",
+    justifyContent: "center",
   },
   variants: {
     variant: {

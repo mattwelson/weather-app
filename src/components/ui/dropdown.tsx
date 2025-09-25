@@ -40,6 +40,7 @@ const dropdownRecipe = sva({
       maxWidth: "214",
       display: "flex",
       flexDirection: "column",
+      zIndex: 10,
       gap: "4",
       "& button": {
         _active: {
