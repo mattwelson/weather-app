@@ -91,9 +91,13 @@ const DropdownContext =
 /**
  * Root component for Dropdown component
  */
-export const Dropdown = component$<DropdownVariants>((props) => {
+export const Dropdown = component$<
+  DropdownVariants & {
+    initialOpen?: boolean;
+  }
+>((props) => {
   const dropdownClasses = dropdownRecipe(props);
-  const isOpen = useSignal(false);
+  const isOpen = useSignal(props.initialOpen);
 
   const toggle = $(() => {
     isOpen.value = !isOpen.value;

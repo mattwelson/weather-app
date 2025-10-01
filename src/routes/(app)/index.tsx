@@ -30,11 +30,28 @@ const meta = [
   },
 ];
 
+const daily = [
+  {
+    date: new Date("2025-09-23"),
+    weatherCode: "showers",
+    temperatureMax: 20,
+    temperatureMin: 14,
+  },
+];
+
 export default component$(() => {
   return (
     <div class={vstack({ gap: 32, alignItems: "stretch", lg: { gap: 48 } })}>
       <SearchControl />
-      <div>
+      <div
+        class={css({
+          xl: {
+            display: "grid",
+            gridTemplateColumns: "1fr 384px",
+            gap: 32,
+          },
+        })}
+      >
         <div>
           <div
             class={vstack({
@@ -49,13 +66,13 @@ export default component$(() => {
               name="Berlin, Germany"
               date={new Date()}
               temperature={20}
-              weatherIcon={"sunny"}
+              weatherCode={0}
             />
             <div
               class={grid({
                 columns: {
                   base: 2,
-                  sm: 4,
+                  md: 4,
                 },
                 gap: 20,
               })}

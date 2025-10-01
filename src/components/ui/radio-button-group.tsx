@@ -27,9 +27,12 @@ const radioButtonRecipe = sva({
       borderRadius: 8,
       cursor: "pointer",
       "& svg": { display: "none" },
-      _hover: { bg: "neutral.700" },
+      _hover: {
+        bg: "neutral.700",
+      },
       '&[aria-checked="true"]': {
         bg: "neutral.600",
+        _hover: { bg: "neutral.600" },
         "& svg": { display: "block" },
       },
     },

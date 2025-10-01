@@ -1,19 +1,16 @@
-import { component$, FunctionComponent } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { sva } from "~/styled-system/css";
 
-import sunny from "~/assets/images/icon-sunny.webp";
 import { hstack } from "~/styled-system/patterns";
 import { formatDate } from "date-fns";
-
-const weatherIcons = {
-  sunny,
-};
+import { WeatherImage } from "../ui/weather-image";
+import { WeatherCodeType } from "~/data/types";
 
 interface TodayCardProps {
   name: string;
   date: Date;
   temperature: number;
-  weatherIcon: keyof typeof weatherIcons;
+  weatherCode: WeatherCodeType;
 }
 
 const todayCardRecipe = sva({
@@ -34,8 +31,7 @@ const todayCardRecipe = sva({
       justifyContent: "center",
       flexDirection: "column",
       gap: 16,
-      sm: {
-        width: 800,
+      md: {
         aspectRatio: "800 / 286",
         backgroundImage: "todayLg",
         flexDirection: "row",
@@ -58,7 +54,7 @@ const todayCardRecipe = sva({
       gap: 12,
       flexDirection: "column",
       alignItems: "center",
-      sm: {
+      md: {
         alignItems: "start",
       },
     },
@@ -66,7 +62,7 @@ const todayCardRecipe = sva({
 });
 
 export const TodayCard = component$<TodayCardProps>(
-  ({ name, date, temperature, weatherIcon }) => {
+  ({ name, date, temperature, weatherCode }) => {
     const recipe = todayCardRecipe();
     return (
       <div class={recipe.root}>
@@ -75,7 +71,7 @@ export const TodayCard = component$<TodayCardProps>(
           <div class={recipe.date}>{formatDate(date, "PPPP")}</div>
         </div>
         <div class={hstack()}>
-          <img src={weatherIcons[weatherIcon]} class={recipe.icon} />
+          <WeatherImage weatherCode={weatherCode} class={recipe.icon} />
           <div class={recipe.temperature}>{temperature}°</div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Button } from "~/components/ui/button";
-import { Input, SearchInput } from "~/components/ui/input";
+import { SearchInput } from "~/components/ui/input";
 
 import Settings from "~/assets/images/icon-units.svg?jsx";
 import Down from "~/assets/images/icon-dropdown.svg?jsx";
@@ -46,7 +46,6 @@ export default component$(() => {
         <p>
           The input makes use of the Panda Recipe to create a reusable input
         </p>
-        <Input placeholder="Search for a city, e.g. New York" />
         <SearchInput placeholder="Search for a city, e.g. New York" />
       </div>
 

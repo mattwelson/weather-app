@@ -66,4 +66,5 @@ const buttonRecipe = cva({
 });
 
 export const Button = styled("button", buttonRecipe);
+export const ButtonLink = styled("a", buttonRecipe);
 export type ButtonVariantProps = RecipeVariantProps<typeof buttonRecipe>;
